@@ -49,9 +49,13 @@ const Wrapper = styled.section`
   .bcg {
     /* MUST!!!!!! */
     min-height: 100vh;
+    
     margin: 0em;
     display: grid;
     place-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
     // animation: ${fadeIn} 2s ease-in-out 1 forwards;
   }
   .bcg::before {
