@@ -42,8 +42,9 @@ export const query = graphql`
 
 
 
-const Projects = ({ menu: data, title, page, id }) => {
-  const [menu, setProjects] = React.useState(data)
+const Projects = ({ projects: data, title, page, id, heading }) => {
+  const [projects, setProjects] = React.useState(data)
+
 
   const setBackToAll = () => {
     setProjects(data)
@@ -60,7 +61,7 @@ const Projects = ({ menu: data, title, page, id }) => {
         />
       )}
       <div className="section-center">
-        {menu.map(item => {
+        {projects.map(item => {
           const { id } = item
           const { name, type, heading } = item.data
           const fluid = item.data.image.localFiles[0].childImageSharp.fluid

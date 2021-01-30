@@ -42,7 +42,7 @@ const GridProjects = ({title}) => {
     allAirtable: { nodes: services},
   } = useStaticQuery(query)
 
-  console.log(services)
+  // console.log(services)
   return (
     <Wrapper>
       <Title title={title || "projects"} />
