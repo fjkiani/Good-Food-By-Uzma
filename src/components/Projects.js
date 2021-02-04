@@ -9,40 +9,42 @@ import { graphql, useStaticQuery } from "gatsby"
 
 
 
-export const query = graphql`
-{
-  allAirtable(
-    filter: { table: { eq: "Menu" } }
-    limit: 3
-    sort: { fields: data___date, order: DESC }
-  ) {
-    nodes {
-      id
-      data {
-        date
-        name
-        type
-        heading
-        image {
-          localFiles {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
+
+// export const query = graphql`
+// {
+//   allAirtable(
+//     filter: { table: { eq: "Menu" } }
+//     limit: 3
+//     sort: { fields: data___date, order: DESC }
+//   ) {
+//     nodes {
+//       id
+//       data {
+//         date
+//         name
+//         type
+//         heading
+//         image {
+//           localFiles {
+//             childImageSharp {
+//               fluid {
+//                 ...GatsbyImageSharpFluid
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `
 
 
 
 
 
-const Projects = ({ projects: data, title, page, id, heading }) => {
+const Projects = ({ projects: data, title, description, id, price, number, page }) => {
+  
   const [projects, setProjects] = React.useState(data)
 
 
@@ -63,17 +65,22 @@ const Projects = ({ projects: data, title, page, id, heading }) => {
       <div className="section-center">
         {projects.map(item => {
           const { id } = item
-          const { name, type, heading } = item.data
+          const { title,description,price,image } = item.data
+         
           const fluid = item.data.image.localFiles[0].childImageSharp.fluid
+          
           return (
             <article key={id}>
               <div className="container">
                 <Image fluid={fluid} className="img" />
                 <div className="item-info">
-                  <header>                 
-                  <p>{name} </p>
-                  <h4>{type}</h4>
-                  <h3>{heading}</h3>
+                  <header>    
+                  <h4>{title}</h4>   
+                  {console.log(price)}          
+                  <p>{description} </p>
+                  <h4>{price}</h4>
+                  {/* <h3>{heading}</h3> */}
+                  
                   </header>
                 </div>
               </div>

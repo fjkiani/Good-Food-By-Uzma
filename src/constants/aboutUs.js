@@ -14,21 +14,21 @@ export default [
     icon: <img src={icon1} className="icon" />,
     label: "mission",
     text:
-      " Activated charcoal post-ironic unicorn flexitarian tumeric, direct trade man bun mumblecore kickstarter art party. ",
+      "To deliver you authentic, exceptional and good Pakistani food. We mean the lick-your-plate good",
   },
   {
     id: 2,
     icon: <img src={icon2} className="icon" />,
     label: "vision",
     text:
-      " Brooklyn mustache polaroid neutra. Wolf subway tile gluten-free bushwick, godard letterpress pitchfork direct trade put a bird on",
+      "using fresh ingredients and a healthy approach to cooking- without compromising taste",
   },
   {
     id: 2,
     icon: <img src={pakistan} className="icon" />,
-    label: "vision",
+    label: "Values",
     text:
-      " Brooklyn mustache polaroid neutra. Wolf subway tile gluten-free bushwick, godard letterpress pitchfork direct trade put a bird on",
+      "Our cuisines are famous for their aroma, mild and spicy mouthwatering flavors. All of our dishes present authentic Pakistani recipes",
   },
   
  

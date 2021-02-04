@@ -21,7 +21,7 @@ const HomePage = ({ data }) => {
       <SEO title="Home" />
       <Hero />
       <About />
-      <GridProjects title="Our Services" />
+      <GridProjects title="Our Menu" />
       {/* <Survey /> */}
       <Slider />
       <Services/>

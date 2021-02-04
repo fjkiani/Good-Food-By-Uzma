@@ -123,9 +123,9 @@ Variables
   }
   
 
-  =============== 
+/* =============== 
 Navbar
-===============
+=============== */
 */
 nav {
   background: var(--clr-white);
@@ -218,3 +218,5 @@ nav {
     color: var(--clr-primary-7);
   }
 }
+
+

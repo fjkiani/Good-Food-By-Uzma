@@ -9,7 +9,7 @@ import { graphql, useStaticQuery } from "gatsby"
 export const query = graphql`
 {
   allAirtable(
-    filter: { table: { eq: "Services" } }
+    filter: { table: { eq: "Menu" } }
     limit: 3
     sort: { fields: data___date, order: DESC }
   ) {
@@ -39,19 +39,19 @@ export const query = graphql`
 const GridProjects = ({title}) => {
 
   const {
-    allAirtable: { nodes: services},
+    allAirtable: { nodes: menu},
   } = useStaticQuery(query)
 
-  // console.log(services)
+  // console.log(menu)
   return (
     <Wrapper>
       <Title title={title || "projects"} />
       <div className="tile-layout">
-        {services.map((service, index) => {
-          const { id } = service
+        {menu.map((menu, index) => {
+          const { id } = menu
           const { 
             data: {heading, name, image } 
-           } = service
+           } = menu
           const fluid = image.localFiles[0].childImageSharp.fluid
           
           return (
@@ -60,7 +60,7 @@ const GridProjects = ({title}) => {
               <div className="info">
                 {/* <p>- {type} -</p> */}
                
-                <Link to={`/projects/${services.slug}`}>
+                <Link to={`/projects/${menu.slug}`}>
                 <h3>{name}</h3>
                 {/* <h3>{heading}</h3> */}
                 </Link>

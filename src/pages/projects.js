@@ -27,12 +27,14 @@ const Wrapper = styled.main`
 
 export const query = graphql`
   {
-    allAirtable(filter: { table: { eq: "Projects" } }) {
+    allAirtable(filter: { table: { eq: "Takeout" } }) {
       nodes {
         id
         data {
           date
-          name
+          title
+          price
+          description
           type
           image {
             localFiles {
